@@ -42,7 +42,7 @@ func main() {
 		}
 		cycles, err := strconv.Atoi(cyclesStrings[0])
 		if err != nil {
-			fmt.Fprint(w, "Error: %v", err)
+			fmt.Fprintf(w, "Error: %v", err)
 			return
 		}
 		lissajous(w, cycles)
