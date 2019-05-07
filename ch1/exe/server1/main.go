@@ -35,12 +35,12 @@ func main() {
 
 	//!+http
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		cycles_strings, ok := r.URL.Query()["cycles"]
-		if !ok || len(cycles_strings[0]) == 0 {
+		cyclesStrings, ok := r.URL.Query()["cycles"]
+		if !ok || len(cyclesStrings[0]) == 0 {
 			fmt.Fprintf(w, "Invalid cycles paramerters!")
 			return
 		}
-		cycles, err := strconv.Atoi(cycles_strings[0])
+		cycles, err := strconv.Atoi(cyclesStrings[0])
 		if err != nil {
 			fmt.Fprint(w, "Error: %v", err)
 			return
